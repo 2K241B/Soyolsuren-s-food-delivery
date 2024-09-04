@@ -28,3 +28,17 @@ export const createUser = async (req, res) => {
         
    
    
+export const getUser = async (req, res ) => {
+    const { id } = req.params;
+    
+    try {
+        const response = await UserModel.findById( id );
+        res.send(response);
+      } catch (error) {
+        console.error("error");
+        res.status (500).send(error.message);
+      }
+    };
+
+
+
