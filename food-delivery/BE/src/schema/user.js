@@ -1,10 +1,24 @@
 import { Schema, model } from "mongoose";
 
 const userSchema = new Schema({
-  name: String,
-  email: String,
-  password: String,
-  phoneNumber: String,
+  name: {
+    type: String,
+    required: [true, "Username is required"]
+  },
+  email: {
+    type: String,
+    required: [true, "Email is required"],
+    minlength: [12, "Please enter a valid email"],
+    maxlength: [50, "Please enter a valid email"]
+  },
+  password: {
+    type: String,
+    required: [true, "Password is required"]
+  },
+  phoneNumber: {
+    type: String,
+    required: [true, "Phone number is required"]
+  },
   role: {
     type: String,
     enum: ["user", "admin"],
