@@ -9,8 +9,9 @@ export const createUser = async (req, res) => {
   const { email, name, password, phoneNumber, role } = req.body;
  
   try {
-    bcrypt.genSalt(saltRounds, (err, salt) => {
-        bcrypt.hash(password, salt, async(err, hash) => {
+    const salt = await bcrypt.genSalt(saltRounds);
+    const hash = await  bcrypt.hash(password, salt);
+    
             const response = await UserModel.create({
                 email,
                 name,
@@ -18,11 +19,11 @@ export const createUser = async (req, res) => {
                 phoneNumber,
                 role,
               });
+
               res.status(200).send(response);
-            });
-        });
             } catch (error) {
-              console.log(error);
+              console.log(error, "error=>this is expected");
+              res.status(500).send(error.message)
             }
           };
         
