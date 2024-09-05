@@ -51,4 +51,22 @@ export const getAllUsers = async (req, res) => {
     }
     };
 
+export const updateUser = async (req, res ) => {
+    const { id } = req.params;
+    const updatedUser = req.body;
+    const { email, name, role, phoneNumber } = req.body;
+      try {
+            const response = await UserModel.findByIdAndUpdate( id, updatedUser );
+            // or {email: email,
+            //   name: name,
+            //   role: role,
+            //   phoneNumber: phoneNumber
+            // } );
+          res.send(response);
+        } catch (error) {
+          console.error("error");
+          res.status (500).send(error.message);
+        }
+      };
+
     
