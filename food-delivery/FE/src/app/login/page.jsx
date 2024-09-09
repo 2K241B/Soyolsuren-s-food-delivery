@@ -7,7 +7,6 @@ import { Input } from "@/components/ui/input";
 import { axiosInstance } from "@/lib/axios";
 import { useRouter } from "next/navigation";
 
-
 const buttonStyles = {
   active: "rounded-[4px] bg-[#18BA51] w-full",
   notActive: "rounded-[4px] bg-slate-500 w-full",
@@ -25,6 +24,7 @@ const LoginPage = () => {
   };
 
   const formRef = useRef(null);
+
   const router = useRouter();
 
   const handleSubmit = async (event) => {
@@ -40,6 +40,7 @@ const LoginPage = () => {
     } else {
       
       console.log("Email or Password Wrong");
+
     }
   };
 
