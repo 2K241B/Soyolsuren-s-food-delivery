@@ -1,17 +1,33 @@
 import { Eye } from "lucide-react";
 
 
-export const LOGIN_INPUTS = [
+export const SIGNUP_INPUTS = [
     {
-      placeholder: "Имэйл хаягаа оруулна уу",
-      name: "Имэйл",
-      type: "email",
+      placeholder: "Нэрээ оруулна уу",
+      name: "Нэр",
+      type: "text",
       
     },
     {
-      placeholder: "Нууц үг",
+      placeholder: "И-мэйл хаягаа оруулна уу",
+      name: "И-мэйл",
+      type: "email",
+      // eye: <Eye/>
+    },
+    {
+      placeholder: "Та хаягаа оруулна уу",
+      name: "Хаяг",
+      type: "text",
+      // eye: <Eye/>
+    },
+    {
+      placeholder: "Нууц үгээ оруулна уу",
       name: "Нууц үг",
       type: "password",
-      eye: <Eye/>
     },
-  ];
+    {
+      placeholder: "Нууц үгээ оруулна уу",
+      name: "Нууц үг давтах",
+      type: "password",
+    }
+  ]
