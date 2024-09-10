@@ -17,7 +17,12 @@ export const CustomForm = forwardRef(({ onSubmit, inputs, btnText }, ref) => {
 
   const handleSubmit = async (event) => {
     event.preventDefault();
-    console.log(formRef.current[0].value);
+    console.log(ref.current[0].value);
+  };
+
+  const [text, setText] = useState("");
+  const handleOnChange = (e) => {
+    setText(e.target.value);
   };
 
   return (
@@ -28,7 +33,7 @@ export const CustomForm = forwardRef(({ onSubmit, inputs, btnText }, ref) => {
         return (
           <div className="relative">
             <p className="font-normal text-[14px]">{name}</p>
-            <Input placeholder={placeholder} type={type} required />
+            <Input placeholder={placeholder} type={passwordShown ? "text" : "password"} onChange={handleOnChange} required />
             <div
               className="absolute right-4 top-8"
               onClick={togglePasswordVisibility}
@@ -40,8 +45,11 @@ export const CustomForm = forwardRef(({ onSubmit, inputs, btnText }, ref) => {
           </div>
         );
       })}
+      <div className="mt-11 mb-6 flex gap-2">
+        <input className="w-[24px]" type="checkbox" /> Үйлчилгээний нөхцөл зөвшөөрөх
+      </div>
       <Button
-        className={buttonStyles.active}
+        className={text !== "" ? buttonStyles.active : buttonStyles.notActive}
         type="submit"
         onClick={handleSubmit}
       >

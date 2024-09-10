@@ -1,6 +1,6 @@
 import { Router } from "express";
 import { createUser, deleteUser, getAllUsers, getUser, updateUser } from "../contrcoller/user.js";
-import { login } from "../contrcoller/auth.js";
+import { Login } from "../contrcoller/auth.js";
 
 const user = Router();
 
@@ -9,6 +9,6 @@ user.get(":id", getUser);
 user.get("/", getAllUsers);
 user.put("/:id", updateUser );
 user.delete("/:id", deleteUser );
-user.post("/login", login)
+user.post("/login", Login)
 
 export { user };
