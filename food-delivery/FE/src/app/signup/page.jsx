@@ -6,6 +6,8 @@ import { EyeIcon, EyeOff } from "lucide-react";
 import { Input } from "@/components/ui/input";
 import { axiosInstance } from "@/lib/axios";
 import { useRouter } from "next/navigation";
+import { SIGNUP_INPUTS } from "@/constants";
+import { CustomForm } from "@/components/CustomForm";
 
 
 const buttonStyles = {
@@ -65,47 +67,16 @@ const SignUpPage = () => {
       <div>
         <h1 className="font-bold text-center text-[28px]">Бүртгүүлэх</h1>
       </div>
-      <form ref={formRef} className="flex flex-col gap-2 w-full">
-        <div>
-          <p className="font-normal text-[14px]">Имэйл</p>
-          <Input
-            placeholder="Имэйл хаягаа оруулна уу"
-            type="email"
-            onChange={handleOnChange}
-            required
-          ></Input>
-        </div>
-        <div className="relative">
-          <p className="font-normal text-[14px]">Нууц үг</p>
-          <Input
-            placeholder="Нууц үг"
-            type={passwordShown ? "text" : "password"}
-            required
-          ></Input>
-          <div
-            className="absolute right-4 top-8"
-            onClick={togglePasswordVisibility}
-          >
-            {passwordShown ? <EyeIcon /> : <EyeOff />}
-          </div>
-          <p className="font-normal text-[14px] mt-2 flex justify-end">
-            Нууц үг сэргээх
-          </p>
-        </div>
+      <form className="flex flex-col gap-2 w-full">
+      <CustomForm
+                        ref={formRef}
+                        onSubmit={handleSubmit}
+                        inputs={SIGNUP_INPUTS}
+                        btnText="Бүртгүүлэх"
+                    />
+       
       </form>
-      <div className="w-full flex flex-col gap-[32px] items-center">
-        <Button
-          className={text !== "" ? buttonStyles.active : buttonStyles.notActive}
-          type="submit"
-          onClick={handleSubmit}
-        >
-          Нэвтрэх
-        </Button>
-        <p className="font-normal text-[14px]">Эсвэл</p>
-        <Button className="rounded-[4px] border-green-500 border-solid border-[1px] bg-white text-black w-full ">
-          Бүртгүүлэх
-        </Button>
-      </div>
+    
     </div>
   );
 };
