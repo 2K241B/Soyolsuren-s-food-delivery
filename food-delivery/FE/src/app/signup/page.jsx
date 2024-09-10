@@ -29,38 +29,24 @@ const SignUpPage = () => {
   const formRef = useRef(null);
   const router = useRouter();
 
-  const handleSubmit = async (event) => {
-    event.preventDefault();
-    console.log(formRef.current[0].value);
 
-    const response = await axiosInstance.post("/api/login", {
-      email: formRef.current[0].value,
-      password: formRef.current[1].value,
-    });
-    if (response.status === 200) {
-      router.push('/');
-    } else {
-      
-      console.log("Email or Password Wrong");
+    const handleSubmit = async (e) => {
+      e.preventDefault(); //log darahaar neg l udaa hevledegiig n boliulaad darah bolgond hevlej bolgoj bga
+      console.log(formRef.current, 'ref')
+      const formData = new FormData(formRef.current);
+      const { name, email, phoneNumber, password, role } = Object.fromEntries(formData);
+      console.log(name, email, phoneNumber, password, role)
+
+      try {
+        const response = await axiosInstance.post('/api/signup', { name: name, email: email, phoneNumber: phoneNumber, password: password, role: role });
+        console.log(response)
+        localStorage.setItem('user', JSON.stringify(response))
+        router.push('/login')
+
+    }   catch (error) {
+        console.log(error);
     }
   };
-
-  //   const handleSubmit = async (e) => {
-  //     e.preventDefault(); //log darahaar neg l udaa hevledegiig n boliulaad darah bolgond hevlej bolgoj bga
-  //     console.log(formRef.current, 'ref')
-  //     const formData = new FormData(formRef.current);
-  //     const { email, password } = Object.fromEntries(formData);
-  //     console.log(email,password)
-
-  //     try {
-  //       const response = await axiosInstance.post('/user/login', {email: email, password: password });
-  //       console.log(response.data)
-  //       localStorage.setItem('user', JSON.stringify(response.data.user[0]))
-
-  //   }   catch (error) {
-  //       console.log(error);
-  //   }
-  // };
 
   return (
     <div className="w-[448px] rounded-[16px] p-[32px] flex flex-col gap-[48px] items-center">
