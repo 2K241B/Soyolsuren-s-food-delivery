@@ -5,6 +5,7 @@ import dotenv from "dotenv";
 import { Connect } from "./utils/db.js";
 import { user } from "./routes/user.js";
 import { auth } from "./routes/auth.js";
+import { sendMail } from "./contrcoller/mail.js";
 
 dotenv.config();
 
@@ -13,8 +14,11 @@ const app = express();
 app.use(bodyParser.json());
 app.use(cors());
 
-app.use("/user", user)
-app.use("/auth", auth)
+app.use("/user", user);
+app.use("/auth", auth);
+
+app.get("/mail", sendMail)
+
 
 app.get("/", (rew, res) => {
     return res.status(200).json('hello world');
