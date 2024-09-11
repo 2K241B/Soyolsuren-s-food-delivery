@@ -5,23 +5,24 @@ const transporter = nodemailer.createTransport({
     port: 587,
     secure: false, // true for port 465, false for other ports
     auth: {
-      user: "faksurene@gmail.com",
-      pass: "gen0mus@@",
+      user: "munkhbat20241715@gmail.com",
+      pass: "fdhybrrxoebqrdsc",
     },
   });
 
 export const sendMail = async (req, res) => {
     try {
     const info = await transporter.sendMail({
-        from: '"Maddison Foo Koch 👻" <faksurene@gmail.com>', // sender address
+        from: '"Maddison Foo Koch 👻" <munkhbat20241715@gmail.com>', // sender address
         to: "faksurene@gmail.com", // list of receivers
         subject: "Hello ✔", // Subject line
         text: "Hello world?", // plain text body
         html: "<b>Hello world?</b>", // html body
       });
+console.log(info);
 
-      if (info.id) {
-        res.status(200).json({success: true, id: info.id });
+      if (info.messageId) {
+        res.status(200).json({success: true, id: info.messageId });
       } else {
         res.status(404).json({error: "error"});
       }
