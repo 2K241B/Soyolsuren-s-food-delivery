@@ -1,4 +1,5 @@
 import { ForgotEmail } from "@/components/ForgotEmail";
+import { ForgotNewPass } from "@/components/ForgotNewPass";
 import { ForgotOTP } from "@/components/ForgotOTP";
 
 const ForgotPass = () => {
@@ -6,6 +7,7 @@ const ForgotPass = () => {
         <div>
             <ForgotEmail/>
             <ForgotOTP/>
+            <ForgotNewPass/>
         </div>
     )
 
