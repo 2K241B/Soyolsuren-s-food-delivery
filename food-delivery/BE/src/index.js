@@ -6,6 +6,7 @@ import { Connect } from "./utils/db.js";
 import { user } from "./routes/user.js";
 import { auth } from "./routes/auth.js";
 import { sendMail } from "./contrcoller/mail.js";
+import { order } from "./routes/order.js";
 
 dotenv.config();
 
@@ -16,6 +17,7 @@ app.use(cors());
 
 app.use("/user", user);
 app.use("/auth", auth);
+app.use("/order", order);
 
 app.get("/mail", sendMail)
 
