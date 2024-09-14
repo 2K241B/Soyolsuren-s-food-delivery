@@ -40,4 +40,4 @@ methodOfPay: {
 });
 
 
-export const orderModel = model("order", orderSchema);
+export const OrderModel = model("order", orderSchema);
