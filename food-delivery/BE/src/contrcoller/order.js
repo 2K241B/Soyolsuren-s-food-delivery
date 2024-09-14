@@ -13,6 +13,15 @@ export const createOrder = async (req, res) => {
               res.status(500).send(error.message)
             }
           };
-        
+
+export const getAllOrders = async (req, res) => {
+    try {
+        const response = await OrderModel.find();
+        res.send(response);
+        } catch (error) {
+        console.error(error);
+        res.status(500).send(error.message);
+    }
+    };
 
     
