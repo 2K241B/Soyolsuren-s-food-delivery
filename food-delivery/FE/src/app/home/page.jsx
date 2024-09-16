@@ -1,8 +1,8 @@
-'use server'
+
 
 import MainSection from "@/components/MainSection";
 import { Cards } from "@/components/Card";
-import { Card1 } from "@/components/icon/CardsImage";
+import  Card1  from "@/assets/Card1.png";
 
 const HomePage = () => {
     return (
@@ -12,6 +12,8 @@ const HomePage = () => {
             <Cards
             imageSrc={ Card1 }
             discount={"20%"}
+            title={"Өглөөний хоол"}
+            price={14800}
             />
         </div>
     )
