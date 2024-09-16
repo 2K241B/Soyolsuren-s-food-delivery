@@ -14,6 +14,7 @@ const HomePage = () => {
             discount={"20%"}
             title={"Өглөөний хоол"}
             price={14800}
+            discountedPrice={16800}
             />
         </div>
     )
