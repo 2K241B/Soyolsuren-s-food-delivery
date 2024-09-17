@@ -24,7 +24,6 @@ export const getAllOrders = async (req, res) => {
     }
     };
 
-   
 export const getOrder = async (req, res ) => {
     const { id } = req.params;
     
@@ -36,4 +35,30 @@ export const getOrder = async (req, res ) => {
         res.status (500).send(error.message);
       }
     };
-    
+
+
+export const updateOdrer = async (req, res ) => {
+    const { id } = req.params;
+    const updatedUser = req.body;
+
+      try {
+            const response = await OrderModel.findByIdAndUpdate( id, updatedUser );
+          res.send(response);
+        } catch (error) {
+          console.error("error");
+          res.status (500).send(error.message);
+        }
+      };
+
+export const deleteOrder = async (req, res ) => {
+    const { id } = req.params;
+        
+      try {
+          const response = await OrderModel.findByIdAndDelete( id );
+          res.send(response);
+        } catch (error) {
+          console.error("error");
+          res.status (500).send(error.message);
+          }
+        };
+
