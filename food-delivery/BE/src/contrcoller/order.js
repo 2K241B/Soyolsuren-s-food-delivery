@@ -39,10 +39,10 @@ export const getOrder = async (req, res ) => {
 
 export const updateOdrer = async (req, res ) => {
     const { id } = req.params;
-    const updatedUser = req.body;
+    const updatedOrder = req.body;
 
       try {
-            const response = await OrderModel.findByIdAndUpdate( id, updatedUser );
+            const response = await OrderModel.findByIdAndUpdate( id, updatedOrder, { new: true } );
           res.send(response);
         } catch (error) {
           console.error("error");
