@@ -31,3 +31,26 @@ export const SIGNUP_INPUTS = [
       type: "password",
     }
   ]
+
+export const CREATE_FOOD_INPUTS = [
+    {
+      name: "Хоолны нэр",
+      placeholder: "Placeholder" 
+    },
+    {
+      name: "Хоолны нэр",
+      placeholder: "Placeholder" 
+    },
+    {
+      name: "Хоолны нэр",
+      placeholder: "Placeholder" 
+    },
+    {
+      name: "Хоолны нэр",
+      placeholder: "Placeholder" 
+    },
+    {
+      name: "Хоолны нэр",
+      placeholder: "Placeholder" 
+    }
+  ]
