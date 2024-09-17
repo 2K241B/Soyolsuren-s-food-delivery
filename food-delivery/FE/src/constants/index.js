@@ -1,4 +1,4 @@
-import { Eye } from "lucide-react";
+import { Book, Salad, Time } from "../components/icon/FeatureIcons";
 
 
 export const SIGNUP_INPUTS = [
@@ -32,6 +32,31 @@ export const SIGNUP_INPUTS = [
     }
   ]
 
+
+ export const FEATURES = [
+    {
+      title: "Хүргэлтийн төлөв хянах",
+      description: "Захиалга бэлтгэлийн явцыг хянах",
+      icon: <Book /> 
+    },
+    {
+      title: "Шуурхай хүргэлт",
+      description: "Захиалга бэлтгэлийн явцыг хянах",
+      icon: <Time /> 
+    },
+    {
+      title: "Эрүүл, баталгаат орц",
+      description: "Захиалга бэлтгэлийн явцыг хянах",
+      icon: <Salad /> 
+    },
+    {
+      title: "Хоолны өргөн сонголт",
+      description: "Захиалга бэлтгэлийн явцыг хянах",
+      icon: <Book /> 
+    }
+
+  ];
+
 export const CREATE_FOOD_INPUTS = [
     {
       name: "Хоолны нэр",
@@ -54,3 +79,4 @@ export const CREATE_FOOD_INPUTS = [
       placeholder: "Placeholder" 
     }
   ]
+
