@@ -3,6 +3,7 @@ import { Logo } from "@/components/icon/Logo";
 import { MagnifyingGlassIcon } from "@radix-ui/react-icons";
 import { LucideShoppingBasket } from "lucide-react";
 import { CREATE_FOOD_INPUTS } from "@/constants";
+import { CreateCategory } from "@/components/CreateCategory";
 
 const menuStyles = {
   default: "text-[14px] font-bold py-2 px-6 leading-[16px] text-black",
@@ -12,7 +13,8 @@ const menuStyles = {
 
 const Navbar = () => {
   return (
-    <div className="flex w-full items-center justify-between py-2 px-6 h-[57px]  bg-white">
+    <div>
+    {/* <div className="flex w-full items-center justify-between py-2 px-6 h-[57px]  bg-white">
       <div className="flex justify-center ">
         <Logo />
         <div>
@@ -35,6 +37,8 @@ const Navbar = () => {
           <p className={menuStyles.lowercase}>Сагс</p>
         </div>
       </div>
+    </div> */}
+    <CreateCategory/>
     </div>
   );
 };
