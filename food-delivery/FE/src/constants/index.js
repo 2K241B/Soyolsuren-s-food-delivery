@@ -32,6 +32,7 @@ export const SIGNUP_INPUTS = [
     }
   ]
 
+
  export const FEATURES = [
     {
       title: "Хүргэлтийн төлөв хянах",
@@ -55,3 +56,27 @@ export const SIGNUP_INPUTS = [
     }
 
   ];
+
+export const CREATE_FOOD_INPUTS = [
+    {
+      name: "Хоолны нэр",
+      placeholder: "Placeholder" 
+    },
+    {
+      name: "Хоолны нэр",
+      placeholder: "Placeholder" 
+    },
+    {
+      name: "Хоолны нэр",
+      placeholder: "Placeholder" 
+    },
+    {
+      name: "Хоолны нэр",
+      placeholder: "Placeholder" 
+    },
+    {
+      name: "Хоолны нэр",
+      placeholder: "Placeholder" 
+    }
+  ]
+
