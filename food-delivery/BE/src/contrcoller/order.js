@@ -43,9 +43,24 @@ export const updateOdrer = async (req, res ) => {
 
       try {
             const response = await OrderModel.findByIdAndUpdate( id, updatedOrder, { new: true } );
+
           res.send(response);
         } catch (error) {
           console.error("error");
           res.status (500).send(error.message);
         }
       };
+
+export const deleteOrder = async (req, res ) => {
+    const { id } = req.params;
+        
+      try {
+          const response = await OrderModel.findByIdAndDelete( id );
+          res.send(response);
+        } catch (error) {
+          console.error("error");
+          res.status (500).send(error.message);
+          }
+        };
+
+
