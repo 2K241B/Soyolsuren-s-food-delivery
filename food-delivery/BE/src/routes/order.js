@@ -6,7 +6,7 @@ const order = Router();
 
 order.post("/create", createOrder);
 order.get("/", getAllOrders);
-order.get(":id", getOrder);
+order.get("/:id", getOrder);
 order.put("/:id", updateOdrer);
 order.delete("/:id", deleteOrder );
 
