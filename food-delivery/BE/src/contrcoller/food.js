@@ -13,3 +13,13 @@ export const createFood = async (req, res) => {
               res.status(500).send(error.message)
             }
           };
+
+export const getAllFood = async (req, res) => {
+    try {
+        const response = await FoodModel.find();
+        res.send(response);
+        } catch (error) {
+        console.error(error);
+        res.status(500).send(error.message);
+    }
+    };

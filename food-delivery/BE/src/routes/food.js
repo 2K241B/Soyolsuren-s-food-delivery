@@ -1,10 +1,11 @@
 import { Router } from "express";
-import { createFood } from "../contrcoller/food.js";
+import { createFood, getAllFood } from "../contrcoller/food.js";
 
 
 const food = Router();
 
 food.post("/create", createFood);
+food.get("/", getAllFood);
 
 
 export { food };
