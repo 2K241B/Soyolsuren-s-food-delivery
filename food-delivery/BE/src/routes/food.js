@@ -1,5 +1,5 @@
 import { Router } from "express";
-import { createFood, getAllFood, getFood, updateFood } from "../contrcoller/food.js";
+import { createFood, getAllFood, getFood, updateFood, deleteFood } from "../contrcoller/food.js";
 
 
 const food = Router();
