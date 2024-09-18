@@ -49,3 +49,15 @@ export const updateFood = async (req, res ) => {
           res.status (500).send(error.message);
         }
       };
+
+export const deleteFood = async (req, res ) => {
+    const { id } = req.params;
+        
+      try {
+          const response = await FoodModel.findByIdAndDelete( id );
+          res.send(response);
+        } catch (error) {
+          console.error("error");
+          res.status (500).send(error.message);
+          }
+        };

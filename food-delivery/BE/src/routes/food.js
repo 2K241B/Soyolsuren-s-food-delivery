@@ -8,6 +8,7 @@ food.post("/create", createFood);
 food.get("/", getAllFood);
 food.get("/:id", getFood);
 food.put("/:id", updateFood);
+food.delete("/:id", deleteFood );
 
 
 export { food };
