@@ -37,3 +37,17 @@ export const getCategory = async (req, res ) => {
         res.status (500).send(error.message);
       }
     };
+
+export const updateCategory = async (req, res ) => {
+    const { id } = req.params;
+    const updatedCategory = req.body;
+
+      try {
+            const response = await CategoryModel.findByIdAndUpdate( id, updatedCategory, { new: true } );
+
+          res.send(response);
+        } catch (error) {
+          console.error("error");
+          res.status (500).send(error.message);
+        }
+      };
