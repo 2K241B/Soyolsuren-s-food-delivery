@@ -17,11 +17,12 @@ const foodSchema = new Schema({
   },
   discount: {
     type: Number,
-    default: 0,
+    default: 0
   },
   categoryId: {
-    type: ''
+    type: '',
   }
 })
 
 export const FoodModel = model("food", foodSchema);
+
