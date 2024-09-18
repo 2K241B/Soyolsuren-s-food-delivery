@@ -8,7 +8,7 @@ const foodSchema = new Schema({
   image: {
     type: String,
   },
-  ingeredient: {
+  ingredient: {
     type: String,
   },
   price: {
@@ -20,7 +20,9 @@ const foodSchema = new Schema({
     default: 0
   },
   categoryId: {
-    type: '',
+    type: Schema.ObjectId,
+    ref: "category",
+    required: [true, "Category id required"]
   }
 })
 
