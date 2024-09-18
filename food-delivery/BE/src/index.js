@@ -8,6 +8,7 @@ import { auth } from "./routes/auth.js";
 import { sendMail } from "./contrcoller/mail.js";
 import { order } from "./routes/order.js";
 import { category } from "./routes/category.js";
+import { food } from "./routes/food.js";
 
 dotenv.config();
 
@@ -20,6 +21,7 @@ app.use("/user", user);
 app.use("/auth", auth);
 app.use("/order", order);
 app.use("/category", category);
+app.use("/food", food);
 
 app.get("/mail", sendMail)
 
