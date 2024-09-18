@@ -34,4 +34,18 @@ export const getFood = async (req, res ) => {
         console.error("error");
         res.status (500).send(error.message);
       }
-    };
+    }
+
+export const updateFood = async (req, res ) => {
+    const { id } = req.params;
+    const updatedFood = req.body;
+
+      try {
+            const response = await FoodModel.findByIdAndUpdate( id, updatedFood, { new: true } );
+
+          res.send(response);
+        } catch (error) {
+          console.error("error");
+          res.status (500).send(error.message);
+        }
+      };
