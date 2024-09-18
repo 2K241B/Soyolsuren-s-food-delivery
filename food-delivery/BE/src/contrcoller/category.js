@@ -24,3 +24,16 @@ export const getAllCategory = async (req, res) => {
         res.status(500).send(error.message);
     }
     };
+
+
+export const getCategory = async (req, res ) => {
+    const { id } = req.params;
+    
+    try {
+        const response = await CategoryModel.findById( id );
+        res.send(response);
+      } catch (error) {
+        console.error("error");
+        res.status (500).send(error.message);
+      }
+    };
