@@ -16,7 +16,7 @@ export const createCategory = async (req, res) => {
 
 export const getAllCategory = async (req, res) => {
   try {
-    const response = await CategoryModel.find().populate("food");
+    const response = await CategoryModel.find().populate("foodId");
     res.send(response);
   } catch (error) {
     console.error(error);

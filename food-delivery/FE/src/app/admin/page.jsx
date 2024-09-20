@@ -1,8 +1,8 @@
 "use client";
 
 import { useEffect, useState } from "react";
-import { instance }  from "@lib/axiosInstance";
 import { useSearchParams } from "next/navigation";
+import { axiosInstance } from "@/lib/axios";
 
 const AdminPage = () => {
     const search = useSearchParams();
@@ -12,7 +12,7 @@ const AdminPage = () => {
 
     useEffect(() => {
         const fetch = async () => {
-            const response = await instance('/food?categoryId=${categoryParam}');
+            const {data} = await axiosInstance(`/food?categoryId=${categoryParam}`);
             setFoods(data)
 
         }

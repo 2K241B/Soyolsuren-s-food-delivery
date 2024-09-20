@@ -5,10 +5,10 @@ const categorySchema = new Schema({
     type: String,
     required: [true, "Name is required"],
   },
-  // foodId: {
-  //   type: Schema.ObjectId,
-  //   ref: "food",
-  // },
+  foodId: {
+    type: Schema.ObjectId,
+    ref: "food",
+  },
 });
 
 export const CategoryModel = model("category", categorySchema);

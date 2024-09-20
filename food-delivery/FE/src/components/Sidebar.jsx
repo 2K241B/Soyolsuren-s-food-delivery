@@ -5,6 +5,7 @@
 import { useSearchParams } from "next/navigation";
 import { useCategories } from "./hooks/useCategories"
 import { SidebarMenuItem } from "./SidebarMenuItem"
+import Link from "next/link";
 
 
 
@@ -25,7 +26,11 @@ const Sidebar = () => {
                         const isActive = category._id == categoryParam;
 
                         return <Link href={{ pathname: '/admin', query: { category: category._id } }}>
-                            <SidebarMenuItem isActive={category.name == categoryParam} key={category.id}>{category.name}</SidebarMenuItem>
+                            <SidebarMenuItem 
+                            key={category.id}
+                            isActive={isActive}  
+                            value={category.name} 
+                            id={category._id} />
                         </Link>
                     })
                 }

@@ -1,6 +1,6 @@
 'use client'
 
-import { instance } from "@lib/axiosInstance";
+import { axiosInstance } from "@/lib/axios";
 import { useEffect, useState } from "react";
 
 export const useCategories = () => {
@@ -11,7 +11,7 @@ export const useCategories = () => {
     useEffect(() => {
         const fetch = async () => {
             try {
-                const { data } = await instance('category');
+                const { data } = await axiosInstance('category');
                 setResponse(data)
                 setLoading(false)
             } catch (error) {
