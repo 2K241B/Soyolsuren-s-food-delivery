@@ -3,7 +3,11 @@ import { EllipsisVertical, Pencil, Trash2 } from "lucide-react";
 import { Input } from "./ui/input";
 import { Button } from "./ui/button";
 import { axiosInstance } from "@/lib/axios";
-import { useState } from "react";
+import { useState, useRef } from "react";
+import { Popover, PopoverContent, PopoverTrigger } from "./ui/popover";
+import { Label } from "./ui/label";
+import { DialogDescription } from "./ui/dialog";
+
 
 export const SidebarMenuItem = ({ value, isActive }) => {
 const [open, setIsOpen] =useState(false)
@@ -47,9 +51,9 @@ const [open, setIsOpen] =useState(false)
               Delete category
             </DialogTrigger>
             <DialogContent className="sm:max-w-[425px]">
-              <CardDescription className="text-lg text-gray-800">
+              <DialogDescription className="text-lg text-gray-800">
                 Are you sure?
-              </CardDescription>
+              </DialogDescription>
               <Button>OK</Button>
             </DialogContent>
           </Dialog>
